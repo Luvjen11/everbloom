@@ -47,13 +47,17 @@ bool readyToHarvest = false;
 bool harvested = false;
 bool planted = false;
 
-
+// brewing 
 BrewResult brewResult = BREW_NONE;
+// tracks final brew dialogue
 bool brewed = false;
 int brewDialogueIndex = 0;
 
+// player picked seed
 SeedType selectedSeeds[2] = { SEED_NONE, SEED_NONE };
+// player planted seeds
 SeedType plantedSeeds[2] = { SEED_NONE, SEED_NONE };
+// player harvested seeds
 SeedType harvestedSeeds[2] = { SEED_NONE, SEED_NONE };
 
 // --------
@@ -68,6 +72,7 @@ bool HasTwoSeeds(SeedType seeds[2]) {
 // add seeds
 void AddSeed(SeedType selectedSeeds[2], SeedType seed) {
 
+    // to not allow more than two seeds 
     if (HasTwoSeeds(selectedSeeds))
         return;
 
@@ -79,7 +84,7 @@ void AddSeed(SeedType selectedSeeds[2], SeedType seed) {
     }
 }
 
-// based on primary color 
+// based on primary colors 
 BrewResult GetBrewResult(SeedType seeds[2]) {
     bool hasRed = (seeds[0] == SEED_RED || seeds[1] == SEED_RED);
     bool hasBlue = (seeds[0] == SEED_BLUE || seeds[1] == SEED_BLUE);
@@ -130,8 +135,11 @@ int main(void) {
         
     //screen one start screen
     ScreenState currentScreen = SCREEN_TITLE;
+
     // dialouge switching
     int dialogueIndex = 0;
+    // total dialogue lines
+    int dialogueCount = 8; 
 
     // array of dialogue text
     const char *dialogueLines[] = {
@@ -150,13 +158,13 @@ int main(void) {
             // GREEN
             "The brew glows green",
             "You: Curious. This one feels unstable.",
-            "The client drinks. Their smile fades first. The potion ended up killing the customer... Congratulations?!"
+            "The client drinks. Their smile fades first.\nThe potion ended up killing the customer...\nCongratulations?!"
         },
         {
             // PURPLE
             "The brew glows purple",
             "You: Beautiful. That usually means trouble.",
-            "The client transforms, though not in any way either of you had hoped. The client is not happy, but at least they are alive... I guess?"
+            "The client transforms, though not in any way either of you had hoped.\nThe client is not happy, but at least they are alive... I guess?"
         },
         {
             // ORANGE
@@ -166,7 +174,6 @@ int main(void) {
         },
     };
 
-    int dialogueCount = 8; 
     bool inventoryOpen = false;
 
     // --------
@@ -181,7 +188,6 @@ int main(void) {
 
         // track mouse position
         Vector2 mouse = GetMousePosition();
-
 
         // start button position 
         Vector2 startPos = { 440, 270 };
