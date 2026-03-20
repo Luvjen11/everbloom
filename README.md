@@ -1,3 +1,28 @@
+# Everbloom
+
+Everbloom is a small magical gardening and alchemy game built in C with Raylib.
+
+The player takes on the role of a grower asked to cultivate the legendary Everbloom, a rare flower tied to strange and dangerous outcomes. Players select two seeds, plant them, wait for the flowers to grow through different stages, harvest them, and finally brew a potion in the cauldron. Different seed combinations lead to different potion colours and endings.
+
+## Features
+
+- Title screen and story dialogue
+- Inventory system for selecting two seeds
+- Planting and flower growth system
+- Harvesting mechanic
+- Cauldron brewing system
+- Multiple potion outcomes with dialogue
+
+## Controls
+
+- **Mouse click** to interact with buttons, seeds, plot, and dialogue
+- **I** to open or close inventory
+- **ESC** to close inventory
+- **C** to clear selected seeds
+- **B** to move to brewing after harvesting
+- **R** to restart after the ending, if implemented
+
+
 # POP Raylib starter
 
 Simple starter application for POP C assignment.
@@ -49,27 +74,3 @@ localhost:XXXXX
 
 where *XXXXX* is the port number you allocated above.
 
-
-# Everbloom
-
-Everbloom is a small magical gardening and alchemy game built in C with Raylib.
-
-The player takes on the role of a grower asked to cultivate the legendary Everbloom, a rare flower tied to strange and dangerous outcomes. Players select two seeds, plant them, wait for the flowers to grow through different stages, harvest them, and finally brew a potion in the cauldron. Different seed combinations lead to different potion colours and endings.
-
-## Features
-
-- Title screen and story dialogue
-- Inventory system for selecting two seeds
-- Planting and flower growth system
-- Harvesting mechanic
-- Cauldron brewing system
-- Multiple potion outcomes with dialogue
-
-## Controls
-
-- **Mouse click** to interact with buttons, seeds, plot, and dialogue
-- **I** to open or close inventory
-- **ESC** to close inventory
-- **C** to clear selected seeds
-- **B** to move to brewing after harvesting
-- **R** to restart after the ending, if implemented
